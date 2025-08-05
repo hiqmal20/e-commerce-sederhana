@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="min-h-screen bg-white flex items-center justify-center px-4">
+    <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      
+    
+      <div>
+        <h1 class="text-4xl font-extrabold text-black mb-4">Register</h1>
+        <p class="mb-6 text-gray-700">
+          Already have an account?
+          <a href="login.html" class="text-indigo-900 underline">Login here</a>
+        </p>
+
+        <form class="flex flex-col gap-4">
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          />
+          <input 
+          type="Full Name"
+          placeholder="Full Name"
+          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          <input
+            type="password"
+            placeholder="Password"
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          />
+           <input
+            type="Confirm Password"
+            placeholder="Confirm Password"
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+ />
+          <a
+          href="/public/pwhome.html"
+            class="w-full bg-[#030B26] text-white font-bold text-lg py-2 rounded shadow hover:bg-[#0a133a] transition text-center"
+          >
+            REGISTER
+          </a>
+        </form>
+
+
+        <div class="flex items-center my-6">
+          <div class="flex-grow border-t border-gray-300"></div>
+          <span class="px-4 font-semibold text-sm text-gray-700">Login with</span>
+          <div class="flex-grow border-t border-gray-300"></div>
+        </div>
+
+        
+        <div class="flex space-x-6 justify-center">
+          <a href="#" class="text-2xl text-red-500 hover:scale-110 transition">
+            <img src="../image/search (2).png" alt="" class="w-7">
+          </a>
+          <a href="#" class="text-2xl text-blue-600 hover:scale-110 transition ">
+            <img src="../image/facebook (1).png" alt="" class="w-7">
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="hidden md:flex items-center justify-center">
+        <img
+          src="../image/image.png"
+          alt="Product"
+          class="rounded-xl shadow-lg w-[360px] h-auto object-contain"
+        />
+      </div>
+    </div>
+  </body>
+</html>

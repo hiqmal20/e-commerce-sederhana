@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Account</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="bg-white">
+     <header class="bg-white text-black shadow p-4 flex items-center justify-between sticky top-0 z-50">
+   <div class="text-xl font-bold">
+    <a href="../public/pwhome.html">
+     <span class="text-black">PRE</span><span class="text-blue-500">L♥VED</span><span class="text-black"> WEAR</span></a>
+   </div>
+   <div class="flex-1 mx-8">
+     <input type="text" placeholder="Search Product" class="w-full p-2 border rounded-full px-4" />
+   </div>
+   <div class="space-x-4 flex items-center">
+     <a href="/public/cart.html">
+     <img src="../image/shopping-cart (1).png" alt="" class="w-5">
+     </a>
+     <img src="../image/user (3).png" alt="" class="w-7">
+   </div>
+ </header>
+
+   <div class="flex min-h-screen">
+
+ <!-- sidebar -->
+    <aside class="w-1/4 border-r bg-white shadow p-6">
+      <div class="flex items-center space-x-2 mb-4">
+        <img src="../image/user (3).png" alt="pp" class="w-10">
+        <div>
+          <div class="font-semibold">Muhamad Hiqmal Saputra</div>
+          <div class="text-sm text-gray-500">muhamadhiqmalsaputra@gmail.com</div>
+        </div>
+      </div>
+
+
+      <div class="mt-6 text-sm">
+        <ul class="space-y-4">
+          <li><a href="#" class="hover:underline">Settings</a></li>
+          <li><a href="../public/cart.html" class="hover:underline">Shopping Cart</a></li>
+          <li><a href="../public/checkout.html" class="hover:underline">Checkout Dashboard</a></li>
+          <li><a href="#" id="logoutLink" class="hover:underline text-red-500">Log Out</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    
+    <main class="flex-1 p-10 bg-white">
+      <h2 class="text-xl font-semibold mb-6">Settings</h2>
+  
+      <div class="flex space-x-6 border-b mb-8 text-sm font-medium">
+        <button class="pb-2 border-b-2 border-black">Personal Profile</button>
+        <button class="pb-2 text-gray-500 hover:text-black">Account Info</button>
+        <button class="pb-2 text-gray-500 hover:text-black">Address Book</button>
+        <button class="pb-2 text-gray-500 hover:text-black">Bank Account</button>
+      </div>
+
+      <div class="flex items-start gap-12">
+        <div class="flex flex-col items-center">
+          <div class="w-40 h-40 rounded-full bg-gray-200 flex items-center justify-center relative">
+            <img src="../image/user (3).png" alt="pp" class="w-full">
+          </div>
+          <p class="text-sm text-center mt-2 text-blue-600 cursor-pointer hover:underline">Upload new Picture</p>
+        </div>
+<div class="max-w-3xl space-y-8 text-sm text-gray-700">
+  <!-- Nama -->
+  <div class="flex justify-between items-center">
+    <div class="w-1/3 font-medium">Nama</div>
+    <div class="flex-1 flex items-center justify-between">
+      <span>Muhamad Hiqmal Saputra</span>
+      <a href="#" class="text-blue-500 hover:underline mr-35">Ubah</a>
+    </div>
+  </div>
+
+  <!-- Tanggal Lahir -->
+  <div class="flex justify-between items-center">
+    <div class="w-1/3 font-medium">Tanggal Lahir</div>
+    <div class="flex-1">
+      <span>20, Oktober 2008</span>
+      <a href="#" class="text-blue-500 hover:underline ml-5">Ubah</a>
+    </div>
+  </div>
+
+  <!-- Jenis Kelamin -->
+  <div class="flex justify-between items-center">
+    <div class="w-1/3 font-medium">Jenis Kelamin</div>
+    <div class="flex-1">
+      <span>Laki-laki</span>
+      <a href="#" class="text-blue-500 hover:underline ml-5">Ubah</a>
+    </div>
+  </div>
+
+  
+  <div class="flex justify-between items-center">
+    <div class="w-1/3 font-medium">Email</div>
+    <div class="flex-1 flex items-center justify-between">
+      <div class="flex items-center gap-3 space-x-5">
+        <span class="ml-36">muhamadhiqmalsaputra@gmail.com</span>
+        <span class="text-green-700 bg-green-100 px-2 py-0.5 text-xs rounded">Terverifikasi</span>
+      </div>
+      <a href="#" class="text-blue-500 hover:underline">Ubah</a>
+    </div>
+  </div>
+
+  <!-- Nomor HP -->
+  <div class="flex justify-between items-center">
+    <div class="w-1/3 font-medium">Nomor HP</div>
+    <div class="flex-1">
+      <span>+62 0986 8787 9873</span>
+      <a href="#" class="text-blue-600 hover:underline ml-5">Ubah</a>
+    </div>
+  </div>
+</div>
+    
+  <script src="../script/profile.js"></script>
+  
+</body>
+</html>

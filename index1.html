@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D-Mart</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={
+theme:{
+extend:{
+colors:{
+primary:'#1a1a2e',
+secondary:'#e2e8f0'
+},
+borderRadius:{
+'none':'0px',
+'sm':'4px',
+DEFAULT:'8px',
+'md':'12px',
+'lg':'16px',
+'xl':'20px',
+'2xl':'24px',
+'3xl':'32px',
+'full':'9999px',
+'button':'8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=futuristic%20tech%20retail%20space%20with%20floating%20product%20displays%2C%20minimalist%20modern%20interior%20with%20neon%20accents%20and%20holographic%20elements%2C%20clean%20white%20space%20with%20subtle%20grid%20patterns%20and%20geometric%20shapes%2C%20high-tech%20shopping%20environment&width=1920&height=1080&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(15,44,89,0.9) 0%, rgba(15,44,89,0.7) 50%, rgba(15,44,89,0.4) 100%);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 1px;
+bottom: -2px;
+left: 0;
+background-color: white;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.product-card:hover {
+transform: scale(1.02);
+transition: transform 0.3s ease;
+}
+.newsletter-input {
+border: none;
+border-bottom: 1px solid rgba(255,255,255,0.3);
+background: transparent;
+color: white;
+outline: none;
+padding: 0.5rem 0;
+width: 100%;
+}
+.newsletter-input::placeholder {
+color: rgba(255,255,255,0.6);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 18px;
+height: 18px;
+border: 1px solid #0f2c59;
+border-radius: 2px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0f2c59;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+top: 2px;
+left: 6px;
+transform: rotate(45deg);
+}
+.social-icon {
+transition: transform 0.3s ease;
+}
+.social-icon:hover {
+transform: translateY(-3px);
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+animation: fadeIn 0.8s ease forwards;
+}
+.sticky-header {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 50;
+background-color: rgba(15,44,89,0.95);
+transform: translateY(-100%);
+transition: transform 0.3s ease;
+}
+.sticky-header.visible {
+transform: translateY(0);
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- navbar-->
+<header class="bg-primary/95 backdrop-blur-md text-white py-4">
+<div class="container mx-auto px-6 flex items-center justify-between">
+<div class="font-['Inter'] text-2xl font-bold tracking-tight">D-Mart</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="nav-link text-sm font-light tracking-wide">BERANDA</a>
+<a href="#" class="nav-link text-sm font-light tracking-wide">ELEKTRONIK</a>
+<a href="#" class="nav-link text-sm font-light tracking-wide">FASHION</a>
+<a href="#" class="nav-link text-sm font-light tracking-wide">PROMO</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="w-5 h-5 flex items-center justify-center cursor-pointer">
+<i class="ri-search-line text-white"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center cursor-pointer">
+<i class="ri-user-line text-white"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center cursor-pointer relative">
+<i class="ri-shopping-bag-line text-white"></i>
+<span class="absolute -top-1 -right-1 bg-white text-primary text-xs rounded-full w-4 h-4 flex items-center justify-center">3</span>
+</div>
+<div class="md:hidden w-5 h-5 flex items-center justify-center cursor-pointer">
+<i class="ri-menu-line text-white"></i>
+</div>
+</div>
+</div>
+</header>
+<!-- Sticky Header -->
+<header class="sticky-header bg-primary text-white py-3">
+<div class="container mx-auto px-6 flex items-center justify-between">
+<div class="font-['inter'] text-xl">D-Mart</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="nav-link text-sm font-light tracking-wide">BERANDA</a>
+<a href="#" class="nav-link text-sm font-light tracking-wide">KOLEKSI</a>
+<a href="#" class="nav-link text-sm font-light tracking-wide">PRIA</a>
+<a href="#" class="nav-link text-sm font-light tracking-wide">WANITA</a>
+<a href="#" class="nav-link text-sm font-light tracking-wide">TENTANG KAMI</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="w-5 h-5 flex items-center justify-center cursor-pointer">
+<i class="ri-search-line text-white"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center cursor-pointer">
+<i class="ri-user-line text-white"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center cursor-pointer relative">
+<i class="ri-shopping-bag-line text-white"></i>
+<span class="absolute -top-1 -right-1 bg-white text-primary text-xs rounded-full w-4 h-4 flex items-center justify-center">3</span>
+</div>
+<div class="md:hidden w-5 h-5 flex items-center justify-center cursor-pointer">
+<i class="ri-menu-line text-white"></i>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section relative h-screen overflow-hidden">
+<div class="hero-overlay absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(26,26,46,0.1)_0%,rgba(26,26,46,0.4)_100%)]"></div>
+<div class="container mx-auto px-6 h-full relative z-10 flex items-center">
+<div class="w-full md:w-1/2 text-white">
+<div class="relative">
+<div class="absolute -left-4 top-0 w-1 h-20 bg-white/30"></div>
+<h1 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-none mb-6">NEXT GEN<br><span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">SHOPPING</span></h1>
+<p class="text-lg md:text-xl font-light mb-10 max-w-md text-gray-200">Jelajahi masa depan belanja dengan teknologi terkini dan koleksi terpilih untuk gaya hidup modern Anda.</p>
+<div class="flex space-x-4">
+<button class="group relative px-8 py-3 text-sm tracking-wider border border-white/30 hover:border-white/0 transition-all duration-300 !rounded-button whitespace-nowrap overflow-hidden">
+<span class="relative z-10 group-hover:text-primary transition-colors duration-300">LIHAT PROMO</span>
+<div class="absolute inset-0 w-0 bg-white group-hover:w-full transition-all duration-300"></div>
+</button>
+<button class="relative px-8 py-3 text-sm tracking-wider bg-white text-primary hover:bg-opacity-90 transition-all duration-300 !rounded-button whitespace-nowrap overflow-hidden hover:shadow-lg hover:shadow-white/20">BELANJA SEKARANG</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block text-xs tracking-wider text-primary mb-2">FEATURED PRODUCTS</span>
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">PRODUK UNGGULAN</h2>
+      <div class="w-20 h-0.5 bg-primary/20 mx-auto"></div>
+    </div>
+
+
+    <!-- Product Grid -->
+    <div id="product" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    
+  
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- Collection Showcase -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 mb-10 md:mb-0 md:pr-10">
+<img src="https://readdy.ai/api/search-image?query=elegant%20fashion%20model%20wearing%20luxury%20blue%20outfit%20in%20minimalist%20studio%20setting%2C%20professional%20fashion%20photography%20with%20artistic%20lighting%2C%20high-end%20fashion%20brand%20aesthetic%2C%20model%20posing%20confidently&width=800&height=1000&seq=8&orientation=portrait" alt="Koleksi Musim Semi" class="w-full object-cover object-top">
+</div>
+<div class="w-full md:w-1/2 md:pl-10 md:border-l border-gray-200">
+<h2 class="text-3xl font-light text-gray-900 mb-6">KOLEKSI MUSIM SEMI 2025</h2>
+<p class="text-gray-600 mb-8 leading-relaxed">Terinspirasi oleh keindahan alam dan keanggunan arsitektur modern, koleksi musim semi kami menghadirkan perpaduan sempurna antara kemewahan dan kenyamanan. Setiap potongan dirancang dengan teliti menggunakan bahan premium dan teknik pengerjaan terbaik.</p>
+<p class="text-gray-600 mb-8 leading-relaxed">Warna-warna biru laut yang dalam, hitam elegan, dan putih bersih mendominasi koleksi ini, menciptakan palet yang abadi namun tetap segar. Detail halus dan potongan yang sempurna menjadi ciri khas setiap item.</p>
+<button class="border border-primary text-primary px-8 py-3 text-sm tracking-wider hover:bg-primary hover:text-white transition duration-300 !rounded-button whitespace-nowrap">JELAJAHI KOLEKSI</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories -->
+<section class="bg-white py-20">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-light text-gray-900 mb-2">KATEGORI</h2>
+        <div class="w-20 h-px bg-primary mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Category 1 -->
+        <div class="relative overflow-hidden group rounded-lg shadow-lg">
+          <img
+            src="https://readdy.ai/api/search-image?query=modern%20electronic%20gadgets%20including%20smartphones%2C%20laptops%2C%20and%20tablets%20displayed%20on%20minimalist%20white%20surface%20with%20blue%20accent%20lighting%2C%20professional%20product%20photography&width=600&height=800&seq=9&orientation=portrait"
+            alt="Elektronik"
+            class="w-full h-[400px] object-cover object-top transition duration-500 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <h3 class="text-2xl font-light mb-2">ELEKTRONIK</h3>
+            <p class="text-sm mb-4 font-light">Gadget dan elektronik terbaru</p>
+            <a href="#" class="inline-block text-sm border-b border-white pb-1 hover:border-opacity-70 transition">JELAJAHI</a>
+          </div>
+        </div>
+  
+        <!-- Category 2 -->
+        <div class="relative overflow-hidden group rounded-lg shadow-lg">
+          <img
+            src="https://readdy.ai/api/search-image?query=modern%20fashion%20clothing%20and%20accessories%20displayed%20in%20minimalist%20retail%20setting%20with%20blue%20accent%20lighting%2C%20professional%20product%20photography&width=600&height=800&seq=10&orientation=portrait"
+            alt="Fashion"
+            class="w-full h-[400px] object-cover object-top transition duration-500 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <h3 class="text-2xl font-light mb-2">FASHION</h3>
+            <p class="text-sm mb-4 font-light">Koleksi fashion terkini</p>
+            <a href="#" class="inline-block text-sm border-b border-white pb-1 hover:border-opacity-70 transition">JELAJAHI</a>
+          </div>
+        </div>
+  
+        <!-- Category 3 --> 
+        <div class="relative overflow-hidden group rounded-lg shadow-lg">
+          <img
+            src="https://readdy.ai/api/search-image?query=modern%20sports%20equipment%20and%20athletic%20wear%20displayed%20in%20minimalist%20setting%20with%20blue%20accent%20lighting%2C%20professional%20product%20photography&width=600&height=800&seq=11&orientation=portrait"
+            alt="Olahraga"
+            class="w-full h-[400px] object-cover object-top transition duration-500 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <h3 class="text-2xl font-light mb-2">OLAHRAGA</h3>
+            <p class="text-sm mb-4 font-light">Perlengkapan olahraga terlengkap</p>
+            <a href="#" class="inline-block text-sm border-b border-white pb-1 hover:border-opacity-70 transition">JELAJAHI</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Brand Story -->
+<section class="py-24 bg-black text-white">
+<div class="container mx-auto px-6 max-w-3xl text-center">
+<h2 class="text-3xl font-light mb-8 font-['Playfair_Display']">CERITA KAMI</h2>
+<p class="text-lg leading-relaxed mb-10 font-light">Didirikan pada tahun 2010, brand kami telah berkomitmen untuk menciptakan pakaian dan aksesori mewah dengan standar kualitas tertinggi. Setiap produk kami adalah perpaduan sempurna antara desain kontemporer, keahlian tradisional, dan bahan-bahan premium dari seluruh dunia.</p>
+<p class="text-lg leading-relaxed mb-12 font-light">Kami percaya bahwa kemewahan sejati terletak pada detail, kualitas, dan keberlanjutan. Itulah mengapa kami bekerja sama dengan pengrajin terbaik dan menggunakan bahan-bahan yang dipilih dengan hati-hati untuk menciptakan produk yang tidak hanya indah, tetapi juga tahan lama.</p>
+<button class="border border-white px-8 py-3 text-sm tracking-wider hover:bg-white hover:text-black transition duration-300 !rounded-button whitespace-nowrap">PELAJARI LEBIH LANJUT</button>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<!-- Column 1 -->
+<div>
+<div class="font-['Pacifico'] text-2xl mb-6">logo</div>
+<p class="text-gray-300 text-sm mb-6">Menyediakan pakaian dan aksesori mewah dengan kualitas terbaik sejak 2010.</p>
+<div class="flex space-x-4">
+<a href="#" class="social-icon w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-white transition duration-300">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="social-icon w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-white transition duration-300">
+<i class="ri-facebook-line"></i>
+</a>
+<a href="#" class="social-icon w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-white transition duration-300">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="social-icon w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-white transition duration-300">
+<i class="ri-pinterest-line"></i>
+</a>
+</div>
+</div>
+<!-- Column 2 -->
+<div>
+<h3 class="text-lg font-medium mb-6">KATEGORI</h3>
+<ul class="space-y-3 text-gray-300 text-sm">
+<li><a href="#" class="hover:text-white transition">Pria</a></li>
+<li><a href="#" class="hover:text-white transition">Wanita</a></li>
+<li><a href="#" class="hover:text-white transition">Aksesoris</a></li>
+<li><a href="#" class="hover:text-white transition">Koleksi Baru</a></li>
+<li><a href="#" class="hover:text-white transition">Bestseller</a></li>
+</ul>
+</div>
+<!-- Column 3 -->
+<div>
+<h3 class="text-lg font-medium mb-6">INFORMASI</h3>
+<ul class="space-y-3 text-gray-300 text-sm">
+<li><a href="#" class="hover:text-white transition">Tentang Kami</a></li>
+<li><a href="#" class="hover:text-white transition">Kontak</a></li>
+<li><a href="#" class="hover:text-white transition">Kebijakan Privasi</a></li>
+<li><a href="#" class="hover:text-white transition">Syarat & Ketentuan</a></li>
+<li><a href="#" class="hover:text-white transition">FAQ</a></li>
+</ul>
+</div>  
+<!-- Column 4 -->
+<div>
+<h3 class="text-lg font-medium mb-6">KONTAK</h3>
+<ul class="space-y-3 text-gray-300 text-sm">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span>Jl. Gayung Love No. 123, Depok, Indonesia</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span>+62 21 1234 5678</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span>D-Mart@gmail.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Elegance. Hak Cipta Dilindungi.</p>
+<div class="flex space-x-6">
+<i class="ri-visa-fill text-2xl text-gray-400"></i>
+<i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+<i class="ri-paypal-fill text-2xl text-gray-400"></i>
+<i class="ri-bank-card-fill text-2xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Sticky header
+const header = document.querySelector('.sticky-header');
+let lastScrollTop = 0;
+window.addEventListener('scroll', function() {
+const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+if (scrollTop > 200) {
+if (scrollTop > lastScrollTop) {
+// Scrolling down
+header.classList.remove('visible');
+} else {
+// Scrolling up
+header.classList.add('visible');
+}
+} else {
+header.classList.remove('visible');
+}
+lastScrollTop = scrollTop;
+});
+// Fade in elements on scroll
+const fadeElements = document.querySelectorAll('.product-card, .text-center h2, .text-center .w-20');
+const fadeInOnScroll = function() {
+fadeElements.forEach(element => {
+const elementTop = element.getBoundingClientRect().top;
+const elementBottom = element.getBoundingClientRect().bottom;
+const windowHeight = window.innerHeight;
+if (elementTop < windowHeight - 100 && elementBottom > 0) {
+element.classList.add('animate-fade-in');
+}
+});
+};
+window.addEventListener('scroll', fadeInOnScroll);
+fadeInOnScroll(); // Initial check
+});
+</script>
+<script src="/public/script.js"></script>   
+</body>
+</html>

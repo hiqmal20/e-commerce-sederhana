@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart Page</title>
+  <link href="../dist/output.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-[#0C1123] min-h-screen flex items-center  flex-col">
+
+  <!-- Wrapper -->
+<div class="bg-white sticky top-0 z-50 w-full">
+  <!-- Navbar -->
+  <header class="text-black shadow p-4 flex items-center justify-between">
+    <div class="text-xl font-bold">
+      <a href="../public/pwhome.html">
+      <span class="text-black">PRE</span><span class="text-blue-500">L♥VED</span><span class="text-black"> WEAR</span>
+      </a>
+    </div>
+    <div class="flex-1 mx-8">
+      <input type="text" placeholder="Search Product" class="w-full p-2 border rounded-full px-4" />
+    </div>
+    <div class="space-x-4 flex items-center">
+      <a href="/public/cart.html">
+        <img src="../image/shopping-cart (1).png" alt="" class="w-5">
+      </a>
+      <a href="../public/profile.html">
+      <img src="../image/user (3).png" alt="profil" class="w-7"></a>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="text-black py-2 flex justify-center space-x-4">
+    <button class="px-4 py-1 hover:underline">Men</button>
+    <button class="px-4 py-1 hover:underline">Women</button>
+    <button class="px-4 py-1 hover:underline">Electronic</button>
+    <button class="px-4 py-1 hover:underline">Thrift</button>
+    <button class="px-4 py-1 hover:underline">Luxury</button>
+  </nav>
+</div>
+
+
+  
+  <div class="w-full max-w-3xl space-y-4 mt-4">
+    <div id="cart-container" class="space-y-4">
+      <!-- Cart items will be injected here -->
+    </div>
+
+    <!-- Total + Checkout -->
+    <div class="p-4 bg-white rounded-lg shadow mt-4 flex justify-between items-center">
+      <div>
+        <p class="text-gray-500">Total</p>
+        <h2 id="total-price" class="text-2xl font-bold text-black">$0.00</h2>
+        <p id="total-selected" class="text-sm text-gray-600">0 items selected</p>
+      </div>
+      <button
+        onclick="checkout()"
+        class="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition"
+      >
+        Checkout
+      </button>
+    </div>
+  </div>
+
+<script src="../script/cart.js">
+</script>
+</body>
+</html>

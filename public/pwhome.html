@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preloved Wear</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+</head>
+<body class="bg-[#0c1532] text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-white text-black shadow p-4 flex items-center justify-between sticky top-0 z-50">
+    <div class="text-xl font-bold">
+      <span class="text-black">PRE</span><span class="text-blue-500">L♥VED</span><span class="text-black"> WEAR</span>
+    </div>
+    <div class="flex-1 mx-8">
+      <input type="text" id="searchInput" placeholder="Search Product" class="w-full p-2 border rounded-full px-4" />
+    </div>
+    <div class="space-x-4 flex items-center">
+      <a href="/public/cart.html">
+      <img src="../image/shopping-cart (1).png" alt="" class="w-5">
+      </a>
+      <a href="../public/profile.html">
+      <img src="../image/user (3).png" alt="profil" class="w-7"></a>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->   
+  <nav class="bg-white text-black py-2 flex justify-center space-x-4">
+    <button class="px-4 py-1 hover:underline">Men</button>
+    <button class="px-4 py-1 hover:underline">Women</button>
+    <button class="px-4 py-1 hover:underline">Electronic</button>
+    <button class="px-4 py-1 hover:underline">Thrift</button>
+    <button class="px-4 py-1 hover:underline">Luxury</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <img src="/img/iklan jordan.png" alt="Hero Image" class="w-full object-cover max-h-[400px]" />
+    <div class="absolute top-4 left-4 text-white font-bold">
+      <!-- Optional Text -->
+    </div>
+  </section>
+
+  <main class="px-6 py-10 bg-[#0c1532]">
+  <div id="product" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+  </div>
+</main>
+
+
+  <!-- Sporty & Rich Section -->
+  <section class="bg-[#0c1532] py-10">
+    <img src="/img/image.png" alt="Sporty & Rich Banner" class="w-full object-cover mb-8" />
+  </section>
+
+ <!--footer-->
+ <footer class="bg-white text-black pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+  <!-- Column 1 -->
+<div>
+ <div class="font-bold">
+   <span class="text-black">PRE</span><span class="text-blue-500">L♥VED</span><span class="text-black"> WEAR</span>
+ </div> 
+<p class="text-black-300 text-sm mb-6">Menyediakan pakaian dan aksesori mewah dengan kualitas terbaik sejak 2010.</p>
+<div class="flex space-x-4">
+<a href="https://www.instagram.com/hiqmal_sptraa" class="social-icon w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-white transition duration-300">
+<i class="ri-instagram-line"></i>
+<img src="../image/instagram.png" alt="" class="w-5">
+</a>
+<a href="#" class="social-icon w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-white transition duration-300">
+<i class="ri-facebook-line"></i>
+<img src="../image/facebook (1).png" alt="" class="w-5">
+</a>
+<a href="#" class="social-icon w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-white transition duration-300">
+<i class="ri-Youtube-x-line"></i>
+<img src="../image/youtube.png" alt="" class="w-5">
+</a>
+<a href="#" class="social-icon w-8 h-8 flex items-center justify-center border border-gray-600 rounded-full hover:border-white transition duration-300">
+<i class="ri-Tiktok-line"></i>
+<img src="../image/tik-tok.png" alt="" class="w-5">
+</a>
+</div>
+</div>
+<!-- Column 2 -->
+<div>
+<h3 class="text-lg font-medium mb-6">KATEGORI</h3>
+<ul class="space-y-3 text-black-300 text-sm">
+<li><a href="#" class="hover:text-white transition">Pria</a></li>
+<li><a href="#" class="hover:text-white transition">Wanita</a></li>
+<li><a href="#" class="hover:text-white transition">Aksesoris</a></li>
+<li><a href="#" class="hover:text-white transition">Koleksi Baru</a></li>
+<li><a href="#" class="hover:text-white transition">Bestseller</a></li>
+</ul>
+</div>
+<!-- Column 3 -->
+<div>
+<h3 class="text-lg font-medium mb-6">INFORMASI</h3>
+<ul class="space-y-3 text-black-300 text-sm">
+<li><a href="#" class="hover:text-white transition">Tentang Kami</a></li>
+<li><a href="#" class="hover:text-white transition">Kontak</a></li>
+<li><a href="#" class="hover:text-white transition">Kebijakan Privasi</a></li>
+<li><a href="#" class="hover:text-white transition">Syarat & Ketentuan</a></li>
+<li><a href="#" class="hover:text-white transition">FAQ</a></li>
+</ul>
+</div>  
+<!-- Column 4 -->
+<div>
+<h3 class="text-lg font-medium mb-6">KONTAK</h3>
+<ul class="space-y-3 text-black-300 text-sm">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span>Jl. Gayung Love No. 123, Depok, Indonesia</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span>+62 21 1234 5678</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span>PW@gmail.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+<p class="text-black-400 text-sm mb-4 md:mb-0">&copy; 2025 Elegance. Hak Cipta Dilindungi.</p>
+<div class="flex space-x-6">
+<img src="../image/visa.png" alt="">
+<img src="../image/logo.png" alt="">
+<img src="../image/paypal (1).png" alt="">
+</div>
+</div>
+</div>
+</footer>
+
+  <script src="../script/script.js"></script>
+  <script src="../script/detail.js"></script>
+</body>
+</html>
